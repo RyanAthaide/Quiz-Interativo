@@ -54,7 +54,7 @@ class perguntas {
 
   function gerarPerguntas () {
     let a = Math.round (Math.random() * 25)
-    let b = Math.round (Math.random() * 20)
+    let b = Math.round (Math.random() * 22)
     let sinal = getSinalRandom()
     const pergunta = new perguntas(a,b,sinal)
     arrayExercicios.push(pergunta)
@@ -79,7 +79,8 @@ function mostrarProximaPergunta() {
   const exercicioAtual = arrayExercicios[indiceExercicio];
   questao.textContent = exercicioAtual.pergunta;
   respostas.forEach((resposta, index) => {
-    resposta.style.backgroundColor = "white"
+    resposta.style.backgroundColor = "#D3D3D3"
+    resposta.style.color = "#2C3E50"
     resposta.textContent = exercicioAtual.respostas[index];
     if (resposta.innerHTML == exercicioAtual.respostaCorreta) {
       resposta.dataset.correta = exercicioAtual.respostaCorreta
@@ -137,6 +138,11 @@ if (cookie) {
 
 containerConteudo.style.display = 'none'
 btn_start.style.display = 'flex'
+containerH3.style.textAling = 'center'
+containerH3.style.display = 'flex'
+containerH3.style.paddingTop = '10%'
+containerH3.style.paddingBottom = '10%'
+containerH3.style.fontSize = '1.3rem'
 
 btn_start.addEventListener('click', function() {
   containerH3.style.display = 'none'
@@ -147,14 +153,14 @@ btn_start.addEventListener('click', function() {
   let eficacia = Math.round(acertos * 100 / perguntasTotais)
   containerConteudo.style.display = 'none'
   containerH3.style.display = 'flex'
-  containerH3.innerHTML = `Você acertou ${acertos} de ${perguntasTotais} perguntas.
+  containerH3.innerHTML = `Parabéns, você acertou ${acertos} de ${perguntasTotais} perguntas.
   Sua eficácia é de ${eficacia}%`
   btn_start.style.display = 'flex'
 //
   let formula = [acertos, perguntasTotais, eficacia]
   let new_cookie = `Resultados = ${formula}; max-age = 100000000000`
   document.cookie = new_cookie
-}, 10000)
+}, 20000)
 })
 
 

@@ -40,8 +40,8 @@ main .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4.5rem;
-    font-weight: 800;
+    font-size: 5rem;
+    font-weight: 900;
     color: #833ae0;
     text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.2);
     margin-bottom: 8%;
@@ -59,15 +59,21 @@ main .container{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     font-size: 25px;
-    border: 2px solid black;
-    background: #fff;
+    border: 2px solid #696969;
+    background-color: #d3d3d3;
     border-radius: 5px;
     padding: 10px 20px;
     font-weight: 600;
     cursor: pointer;
+    z-index: 2;
+}
+
+.alternative:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
 }
 
 #container-h3{
@@ -86,6 +92,10 @@ main .container{
     color: #1A1A1A;
 }
 
+.icone-quiz{
+    width: 65px;
+}
+
 .btn-start{
     display: flex;
     align-items: center;
@@ -102,6 +112,7 @@ main .container{
     border-radius: 10px;
     padding: 20px 110px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .btn-start:hover{
@@ -126,6 +137,7 @@ main .container{
     height: 40px;
     animation: float 4s ease-in-out infinite;
     filter: hue-rotate(90deg) brightness(2.6) saturate(2);
+    z-index: 1;
 }
 
 /* Posições específicas dos ícones pela tela */
@@ -234,4 +246,69 @@ main .container{
     100% {
         transform: translateY(0);
     }
+}
+
+.descricao-end{
+    width: 70%;
+    margin-top: -10%;
+    margin-bottom: -8%;
+    text-align: center;
+    color: #1A1A1A;
+}
+
+/* Estilos para celulares (com telas menores que 768px) */
+@media (max-width: 768px) {
+    
+    header .logo{
+        max-width: 85%;
+    }
+
+    .title-quiz{
+        display: flex;
+        text-align: center;
+        font-size: 3.6rem;
+        z-index: 2;
+    }
+
+    .icone-quiz{
+        max-width: 40px;
+    }
+
+    .icon {
+        max-width: 30px; /* Ajuste conforme o tamanho desejado dos ícones */
+        max-height: 30px;
+    }
+
+    /* Animação de flutuação */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+
+    }
+    50% {
+        transform: translateY(-8px);
+        
+
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.descricao-end{
+    display: flex;
+    width: 85%;
+    text-align: center;
+    margin: 0;
+    background-color: #fff;
+    color: #1A1A1A;
+    box-shadow: 8px 8px 16px rgba(230, 37, 255, 0.3);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.btn-start{
+    margin-top: 4%;
+}
+
 }
