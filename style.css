@@ -22,8 +22,46 @@ header{
     display: flex;
 }
 
-.logo{
+/* Estilos do tooltip */
+.logo-container .tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: .88rem;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Posição abaixo da logo */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+/* Triângulo do tooltip */
+.logo-container .tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* Triângulo apontando para cima */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+/* Mostrar o tooltip ao passar o mouse */
+.logo-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#logo{
     width: 162px;
+    cursor: pointer;
 }
 
 

@@ -1,3 +1,4 @@
+
 // animação titulo ***
 
 anime({
@@ -162,5 +163,3 @@ btn_start.addEventListener('click', function() {
   document.cookie = new_cookie
 }, 20000)
 })
-
-
